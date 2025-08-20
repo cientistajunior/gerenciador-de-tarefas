@@ -1,0 +1,136 @@
+/* :host representa o elemento <app-task-list> */
+:host {
+  /* --- Nossas Variáveis CSS --- */
+  /* Paleta de Cores */
+  --primary-color: #007bff;
+  --primary-color-hover: #0056b3;
+  --danger-color: #dc3545;
+  --danger-color-hover: #c82333;
+  --light-bg-color: #f9f9f9;
+  --white-color: #fff;
+  --border-color: #eee;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-light: #aaa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Padrões de Layout com REM */
+  --border-radius-sm: 0.4rem; /* 4px */
+  --border-radius-md: 0.8rem; /* 8px */
+  --spacing-md: 1.5rem; /* 15px */
+  --spacing-lg: 3rem; /* 30px */
+
+  /* --- Fim das Variáveis --- */
+
+  /* Faz com que o componente se comporte cmo um bloco, ocupando espaço */
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container principal do nosso componente */
+.task-manager {
+  max-width: 70rem; /* 700px */
+  margin: 5rem auto; /* Centraliza na página com uma margem no topo */
+  padding: var(--spacing-lg);
+  background-color: var(--light-bg-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 0.4rem 1.5rem var(--shadow-color);
+}
+
+/* Estilo do cabeçalho */
+.task-header h1 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Container do formulário (input + botão) */
+.task-form-container {
+  display: flex; /* Alinha o input e o botão na mesma linha */
+  gap: 1rem; /* Espaçamento entre o input e o botão */
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Campo de texto para nova tarefa */
+.task-input {
+  flex-grow: 1; /* Faz o input ocupar todo o espaço disponível */
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Botão de adicionar */
+.add-task-btn {
+  padding: 0 2.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--white-color);
+  background-color: var(--primary-color); /* Azul primário */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: var(--primary-color-hover); /* Azul mais escuro no hover */
+}
+
+/* Container da lista de tarefas */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* Espaçamento entre os itens da lista */
+}
+
+/* Cada item da lista de tarefas */
+.task-item {
+  display: flex;
+  justify-content: space-between; /* Alinha o nome à esquerda e o botão à direita  */
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+}
+
+.task-name {
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.text-item.completed .task-name {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+/* Botão de excluir */
+.delete-task-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: var(--white-color);
+  background-color: var(--danger-color); /* Vermelho para perigo/exclusão */
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-task-btn:hover {
+  background-color: var(--danger-color-hover);
+}
+
+/* Melhora de Acessibilidade: Indica qual elemento está em foco */
+.task-input:focus-visible,
+.add-task-btn:focus-visible,
+.delete-task-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

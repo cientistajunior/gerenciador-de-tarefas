@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* --- Modern CSS Reset --- */
+
+/* 1. Use a box model mais intuitivo. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remova as margens padrão de todos os elementos. */
+* {
+  margin: 0;
+}
+
+/* 3. Permita que elementos de imagem e mídia se comportem melhor. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 4. Remova os estilos de fonte herdados para formulários. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 5. Melhore a quebra de texto. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 6. Adicione esta regra no src/styles.css */
+html {
+  font-size: 62.5%; /* 16px * 0.625 = 10px */
+}
