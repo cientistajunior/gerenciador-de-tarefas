@@ -43,9 +43,15 @@ export class TaskService {
 
   // --- NOSSO NOVO MÉTODO ---
   toggleTaskCompleted(id: number) {
-    const task = this.tasks.find((t) => t.id === id);
-    if (task) {
-      task.completed = !task.completed;
-    }
+    this.tasks = this.tasks.map((task) => {
+      // Se a tarefa atual é a que queremos modificar...
+      if (task.id === id) {
+        // ...retornamos um NOVO objeto, com a propriedade 'completed' invertida.
+        // O "...task" copia todas as propriedades antigas (id, name).
+        return { ...task, completed: !task.completed };
+      }
+      // Se não for, apenas retornamos a tarefa original se modificação.
+      return task;
+    });
   }
 }

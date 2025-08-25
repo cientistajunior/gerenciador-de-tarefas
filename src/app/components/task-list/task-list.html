@@ -16,7 +16,7 @@
 
   <div class="tasks-container">
     <div *ngFor="let task of tasks" class="task-item" [ngClass]="{ completed: task.completed }">
-      <span class="task-name">{{ task.name }}</span>
+      <span class="task-name" (click)="toggleTaskCompleted(task.id)">{{ task.name }}</span>
       <button class="delete-task-btn" (click)="deleteTask(task.id)">Excluir</button>
     </div>
   </div>

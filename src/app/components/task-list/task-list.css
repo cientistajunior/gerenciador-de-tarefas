@@ -106,7 +106,7 @@
   cursor: pointer;
 }
 
-.text-item.completed .task-name {
+.task-item.completed .task-name {
   text-decoration: line-through;
   color: var(--text-light);
 }

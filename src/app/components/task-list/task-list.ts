@@ -41,4 +41,15 @@ export class TaskListComponent implements OnInit {
     // Atualizamos a lista local para refletir a exclusão.
     this.tasks = this.taskService.getTasks();
   }
+
+  // --- NOSSO NOVO MÉTODO PARA O "UPDATE" ---
+  toggleTaskCompleted(id: number): void {
+    this.taskService.toggleTaskCompleted(id);
+    // Não precisamos recarregar a lista (this.tasks = this.taskService.getTasks())
+    // porque estamos modificando o objeto diretamente na memória,
+    // e o Angular detecta essa mudança
+
+    // Adicione esta linha para pegar o NOVO array criado pelo serviço
+    this.tasks = this.taskService.getTasks();
+  }
 }
